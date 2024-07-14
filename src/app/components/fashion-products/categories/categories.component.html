@@ -1,0 +1,16 @@
+<div class="row align-items-md-stretch">
+  <ng-container *ngIf="categoriesProduct && categoriesProduct.length > 0">
+    <h2>
+      Categories des produits
+      <i class="bi bi-cart-check-fill text-success"></i>
+    </h2>
+    <div class="col-md-6 mb-4" *ngFor="let category of categoriesProduct">
+      <div class="h-100 p-5 rounded-3 bg-primary">
+        <h2 class="text-light">{{ category }}</h2>
+        <button class="btn btn-secondary" type="button" [routerLink]="['/categories', category]">
+          Afficher les produits
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,35 @@
+<div
+  class="p-5 mb-4 text-light rounded-3"
+  style="
+    background-color: #007bff;
+    text-align: center;
+  "
+>
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Produit Fashion</h1>
+    <p class="col-md-8 fs-4 mx-auto">
+      Bienvenue sur le site de vente de produits fashion. Vous trouverez ici des
+      produits de qualité à des prix imbattables.
+    </p>
+    <button routerLink="/products" class="btn btn-light btn-lg" type="button">
+      Liste des produits
+    </button>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2 class="mb-4">
+    Meilleure évaluation des produits
+    <i class="bi bi-cart-check-fill text-success"></i>
+  </h2>
+  <div class="row" *ngIf="bestRatedProducts?.length">
+    <div class="col-md-6 mb-4" *ngFor="let product of bestRatedProducts">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <button class="btn btn-info" type="button" (click)="viewDetails()">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
